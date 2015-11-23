@@ -12,14 +12,15 @@
       exit;
     }
 
+    $from_email = "sy@sytantris.com";
     $recipient = "sytantris.dyat@gmail.com";
-    $subject = "New darklings contact from $name";
+    $subject = "New contact from $name";
 
     $email_content = "name: $name\n";
     $email_content .= "email: $email\n";
     $email_content .= "message\n$message\n";
 
-    $email_headers = "From $name <$email>";
+    $email_headers = "From sytantris.com <$from_email>";
 
     if (mail($recipient, $subject, $email_content, $email_headers)) {
       http_response_code(200);
