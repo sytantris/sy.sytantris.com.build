@@ -20,7 +20,8 @@
     $email_content .= "email: $email\n";
     $email_content .= "message\n$message\n";
 
-    $email_headers = "From sytantris.com <$from_email>";
+    $email_headers = "From: sy@sytantris.com <$from_email>\n" .
+                     "Reply-To: $name <$email>";
 
     if (mail($recipient, $subject, $email_content, $email_headers)) {
       http_response_code(200);
