@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+  <head>
+
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+    
+        <!-- Hammer reload -->
+          <script>
+            setInterval(function(){
+              try {
+                if(typeof ws != 'undefined' && ws.readyState == 1){return true;}
+                ws = new WebSocket('ws://'+(location.host || 'localhost').split(':')[0]+':35353')
+                ws.onopen = function(){ws.onclose = function(){document.location.reload()}}
+                window.onbeforeunload = function() { ws = null }
+                ws.onmessage = function(){
+                  var links = document.getElementsByTagName('link');
+                    for (var i = 0; i < links.length;i++) {
+                    var link = links[i];
+                    if (link.rel === 'stylesheet' && !link.href.match(/typekit/)) {
+                      href = link.href.replace(/((&|\?)hammer=)[^&]+/,'');
+                      link.href = href + (href.indexOf('?')>=0?'&':'?') + 'hammer='+(new Date().valueOf());
+                    }
+                  }
+                }
+              }catch(e){}
+            }, 1000)
+          </script>
+        <!-- /Hammer reload -->
+      
+
+    <link rel='stylesheet' href='assets/css/lib/reset.css'>
+<link rel='stylesheet' href='assets/css/style.css'>
+    <script src='assets/js/jquery-2.1.4.min.js'></script>
+<script src='assets/js/app.js'></script>
+<script src='assets/js/contact.js'></script>
+
+    <link href='assets/favicon.ico' rel='shortcut icon'>
+    <link href='assets/apple-touch-icon.png' rel='apple-touch-icon'>
+
+    <title>Sytantris Dyat</title>
+
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+  </head>
+
+  <body>
+
+    <header>
+      <h1>Sytantris Dyat</h1>
+      <div>
+        <h2>web developer in development</h2>
+      </div>
+      <nav>
+  <ul>
+    <li class='current-parent'><a class='current-parent' href='index.html'>home</a></li>
+    <li><a href='music.html'>music</a></li>
+    <li><a href='code.html'>code</a></li>
+    <li><a href='portfolio.html'>portfolio</a></li>
+    <li class='current'><a class='current' href='resume.html'>resume</a></li>
+    <li><a href='contact.html'>contact</a></li>
+  </ul>
+</nav>
+
+    </header>
+
+  <div class='content'>
+    <div class='left'>
+      <h1>resume</h1>
+      <img src='assets/img/sy-05.jpg'>
+    </div>
+    <article class='right' id='resume'>
+
+      <div id='pdf'>
+        <a href=''>
+          <h2>Download in PDF</h2>
+        </a>
+      </div>
+
+      <div id='objective'>
+        <h2>Objective</h2>
+        <p>Employment in a junior to intermediate, front or back end web development position that allows me to:</p>
+        <ul>
+          <li>utilize and develop my current skillset</li>
+          <li>learn and explore technologies I'm less familiar with</li>
+          <li>grow along with the company I work for</li>
+          <li>maintain a healthy work-life balance</li>
+          <li>continue working on my music on a regular schedule</li>
+        </ul>
+      </div>
+
+      <div id='qualifications'>
+        <h2>Qualifications</h2>
+        <ul>
+          <li>Several years of programming and web development experience</li>
+          <li>Proficient in front and back end web platforms</li>
+          <li>Writes clean, consistent, well-formatted and refactored code</li>
+          <li>Mathematical mind, strong problem solving capacity and programming acumen</li>
+          <li>Excellent communication skills, both written and oral</li>
+          <li>Rapid ability to learn new skills and concepts</li>
+        </ul>
+      </div>
+
+      <div id='skills'>
+        <h2>Skills</h2>
+        <div class='legend'>
+          <p class='legend'><span class='stars'>✩✩✩✩</span> = fast &amp; furious</p>
+          <p class='legend'><span class='stars'>✩✩✩</span> = used extensively</p>
+          <p class='legend'><span class='stars'>✩✩</span> = fairly well-versed</p>
+          <p class='legend'><span class='stars'>✩</span> = some experience</p>
+        </div>
+        <ul>
+          <li>HTML5 <span class='stars'>✩✩✩✩</span></li>
+          <li>CSS3 <span class='stars'>✩✩✩✩</span></li>
+          <li>SASS <span class='stars'>✩✩✩✩</span></li>
+          <li>LESS <span class='stars'>✩✩</span></li>
+          <li>Javascript <span class='stars'>✩✩✩</span></li>
+          <li>jQuery <span class='stars'>✩✩✩</span></li>
+          <li>Ajax <span class='stars'>✩✩</span></li>
+          <Li>Ruby <span class='stars'>✩✩✩</span></li>
+          <li>Rails <span class='stars'>✩✩</span></li>
+          <li>Java <span class='stars'>✩✩✩</span></li>
+          <li>C++ <span class='stars'>✩✩</span></li>
+          <li>Objective-C <span class='stars'>✩✩</span></li>
+          <li>iOS development <span class='stars'>✩✩</span></li>
+          <li>PHP <span class='stars'>✩</span></li>
+          <li>Python <span class='stars'>✩</span></li>
+          <li>Angular.js <span class='stars'>✩</span></li>
+          <li>MySQL <span class='stars'>✩</span></li>
+          <li>Rspec <span class='stars'>✩</span></li>
+          <li>RefineryCMS <span class='stars'>✩✩✩</span></li>
+          <li>LocomotiveCMS <span class='stars'>✩</span></li>
+          <li>Bootstrap <span class='stars'>✩✩</span></li>
+          <li>Foundation <span class='stars'>✩✩</span></li>
+          <li>git <span class='stars'>✩✩✩</span></li>
+          <li>Linux commands <span class='stars'>✩✩</span></li>
+          <li>Vim <span class='stars'>✩✩✩</span></li>
+        </ul>
+      </div>
+
+      <div id='education'>
+        <h2>Education</h2>
+
+        <p class='title'>Advanced Recording Artist Program</p>
+        <p>Harbourside Institute of Technology • 2015 July - present</p>
+        <ul>
+          <li>Co-producing a professional 4-track concept electronic/lyrical EP</li>
+          <li>Composing, programming (using Ableton Live and Logic Pro), studio recording, vocal compositing and tuning, mixing tracks with the guidance and mentorship of instructors</li>
+          <li>Pro Tools level 200 and 210 certifications</li>
+        </uL>
+
+        <p class='title'>Programming &amp; Web Development</p>
+        <p>Langara College • 2012 September - 2013 May</p>
+        <ul>
+          <li>Courses in web development, user interface design &amp; usability, program design, object-oriented programming, algorithms &amp; data structures</li>
+          <li>Consistently maintained top-of-class grades (A(+/-) standing in all courses</li>
+        </ul>
+
+        <p class='title'>One-Month Spanish Immersion</p>
+        <p>Guadalajara Language Centre (Guadalajara, Mexico) • 2011 April - May</p><br>
+
+        <p class='title'>Audio Engineering &amp; Music Production</p>
+        <p>Harbourside Institute of Technology • 2009 October - 2010 July</p>
+        <ul>
+          <li>Courses in audio engineering &amp; recording, mixing, electronic music production, music theory, songwriting, studio design, film &amp; game post-audio production</li>
+          <li>Achieved the highest grades on record for the entire school ever</li>
+          <li>Pro Tools 101, 110 and 130 certifications</li>
+        </ul>
+
+        <p class='title'>Arts &amp; Sciences University Transfer</p>
+        <p>Langara College • 2006 September - 2007 December</p>
+        <ul>
+          <li>First- and second-year courses in computer science, mathematics, physics, chemistry, psychology, anthropology, philosophy</li>
+          <li>Achieved A(+) standing in all courses</li>
+        </ul>
+
+        <p class='title'>High School Upgrading &amp; University Transfer</p>
+        <p>Vancouver Community College • 2005 January - 2006 May</p>
+        <ul>
+          <li>Courses in mathematics, physics, chemistry, psychology and English</li>
+          <li>Achieved A(+) standing in all courses and honour roll in many</li>
+          <li>Won VCC Student Association Scholarship for academic acheivement</li>
+        </ul>
+      </div>
+
+      <div id='employment'>
+        <h2>Employment Highlights</h2>
+        <p class='title'>Web Developer (Remote)</p>
+        <p> ion8 (North Bay, ON) • 2013 October - 2015 July</p>
+        <ul>
+          <li>Client-oriented front- and back-end development for a web agency</li>
+          <li>Front-end development using HTML, CSS/SASS, Javascript/jQuery, Bootstrap, Foundation</li>
+          <li>Back-end development using Ruby, Rails, RefineryCMS, LocomotiveCMS</li>
+          <li>Shopify integration and customization</li>
+        </ul>
+
+        <p class='title'>Front-End Developer (Contract)</p>
+        <p>Real Fan Blast (Montreal, QC) • 2013 May - July</p>
+        <ul>
+          <li>Integrated and assisted with development of the MVP for a niche social network</li>
+          <li>Front-end development using HTML, CSS/SASS, Javascript, Angular.js, Bootstrap</li>
+          <li>Back-end development using Python, Pyramid, Mako templating, MongoDB</li>
+        </ul>
+
+        <p class='title'>Circulation Assistant</p>
+        <p>Vancouver Public Library (Vancouver, BC) • 2008 November - 2012 June</p>
+        <ul>
+          <li>Provided excellent customer service and performed circulatory duties:</li>
+          <li>Performing checkouts, processing returns, shelving, registering new patrons, day-to-day problem solving with regards to patron records, clerical work</li>
+        </ul>
+      </div>
+    </article>
+  </div>
+  
+</body>
+
+</html>

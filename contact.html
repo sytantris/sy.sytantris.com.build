@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+  <head>
+
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+    
+        <!-- Hammer reload -->
+          <script>
+            setInterval(function(){
+              try {
+                if(typeof ws != 'undefined' && ws.readyState == 1){return true;}
+                ws = new WebSocket('ws://'+(location.host || 'localhost').split(':')[0]+':35353')
+                ws.onopen = function(){ws.onclose = function(){document.location.reload()}}
+                window.onbeforeunload = function() { ws = null }
+                ws.onmessage = function(){
+                  var links = document.getElementsByTagName('link');
+                    for (var i = 0; i < links.length;i++) {
+                    var link = links[i];
+                    if (link.rel === 'stylesheet' && !link.href.match(/typekit/)) {
+                      href = link.href.replace(/((&|\?)hammer=)[^&]+/,'');
+                      link.href = href + (href.indexOf('?')>=0?'&':'?') + 'hammer='+(new Date().valueOf());
+                    }
+                  }
+                }
+              }catch(e){}
+            }, 1000)
+          </script>
+        <!-- /Hammer reload -->
+      
+
+    <link rel='stylesheet' href='assets/css/lib/reset.css'>
+<link rel='stylesheet' href='assets/css/style.css'>
+    <script src='assets/js/jquery-2.1.4.min.js'></script>
+<script src='assets/js/app.js'></script>
+<script src='assets/js/contact.js'></script>
+
+    <link href='assets/favicon.ico' rel='shortcut icon'>
+    <link href='assets/apple-touch-icon.png' rel='apple-touch-icon'>
+
+    <title>Sytantris Dyat</title>
+
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+  </head>
+
+  <body>
+
+    <header>
+      <h1>Sytantris Dyat</h1>
+      <div>
+        <h2>web developer in development</h2>
+      </div>
+      <nav>
+  <ul>
+    <li class='current-parent'><a class='current-parent' href='index.html'>home</a></li>
+    <li><a href='music.html'>music</a></li>
+    <li><a href='code.html'>code</a></li>
+    <li><a href='portfolio.html'>portfolio</a></li>
+    <li><a href='resume.html'>resume</a></li>
+    <li class='current'><a class='current' href='contact.html'>contact</a></li>
+  </ul>
+</nav>
+
+    </header>
+
+  <div class='content'>
+    <div class='right'>
+      <h1>contact</h1>
+      <img src='assets/img/sy-06.jpg'>
+    </div>
+    <article class='left' id='contact'>
+      <div id='form-messages'>
+        <div id='form-success'></div>
+        <div id='form-error'></div>
+      </div>
+      <form id='contact-form' action='mailer.php' method='post'>
+        <div>
+          <input type='text' name='contact-name' id='contact-name'
+                 placeholder='your name...' required>
+
+          <input type='email' name='contact-email' id='contact-email'
+                 placeholder='your email...' required>
+        </div>
+
+        <textarea name='contact-message' id='contact-message' 
+                  placeholder='your message...' required></textarea>
+        
+        <div>
+          <div class="g-recaptcha" data-sitekey="6LflkQ4TAAAAAD-9-IKethsZ8lyS4BJ2V-XVprug"></div>
+          <a href='#' name='contact-submit' id='contact-submit'>submit</a>
+          <br>
+        </div>
+      </form>
+    </article>
+  </div>
+  
+</body>
+
+</html>

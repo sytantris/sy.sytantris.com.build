@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+  <head>
+
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+    
+        <!-- Hammer reload -->
+          <script>
+            setInterval(function(){
+              try {
+                if(typeof ws != 'undefined' && ws.readyState == 1){return true;}
+                ws = new WebSocket('ws://'+(location.host || 'localhost').split(':')[0]+':35353')
+                ws.onopen = function(){ws.onclose = function(){document.location.reload()}}
+                window.onbeforeunload = function() { ws = null }
+                ws.onmessage = function(){
+                  var links = document.getElementsByTagName('link');
+                    for (var i = 0; i < links.length;i++) {
+                    var link = links[i];
+                    if (link.rel === 'stylesheet' && !link.href.match(/typekit/)) {
+                      href = link.href.replace(/((&|\?)hammer=)[^&]+/,'');
+                      link.href = href + (href.indexOf('?')>=0?'&':'?') + 'hammer='+(new Date().valueOf());
+                    }
+                  }
+                }
+              }catch(e){}
+            }, 1000)
+          </script>
+        <!-- /Hammer reload -->
+      
+
+    <link rel='stylesheet' href='assets/css/lib/reset.css'>
+<link rel='stylesheet' href='assets/css/style.css'>
+    <script src='assets/js/jquery-2.1.4.min.js'></script>
+<script src='assets/js/app.js'></script>
+<script src='assets/js/contact.js'></script>
+
+    <link href='assets/favicon.ico' rel='shortcut icon'>
+    <link href='assets/apple-touch-icon.png' rel='apple-touch-icon'>
+
+    <title>Sytantris Dyat</title>
+
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+  </head>
+
+  <body>
+
+    <header>
+      <h1>Sytantris Dyat</h1>
+      <div>
+        <h2>web developer in development</h2>
+      </div>
+      <nav>
+  <ul>
+    <li class='current'><a class='current' href='index.html'>home</a></li>
+    <li><a href='music.html'>music</a></li>
+    <li><a href='code.html'>code</a></li>
+    <li><a href='portfolio.html'>portfolio</a></li>
+    <li><a href='resume.html'>resume</a></li>
+    <li><a href='contact.html'>contact</a></li>
+  </ul>
+</nav>
+
+    </header>
+
+  <div class='content'>
+    <div class='left'>
+      <h1>sytantris dyat</h1>
+      <img id='sy-main' src='assets/img/sy-01.jpg'>
+      <a href='http://ca.linkedin.com/in/aurorasy' target='_blank'><img class='icon' src='assets/img/icons/icon-linkedin.png'></a>
+      <a href='http://www.github.com/sytantris' target='_blank'><img class='icon' src='assets/img/icons/icon-github.png'></a>
+      <a href='https://www.mixcloud.com/sytantris' target='_blank'><img class='icon' src='assets/img/icons/icon-mixcloud.png'></a>
+      <a href='https://www.soundcloud.com/sytantris' target='_blank'><img class='icon' src='assets/img/icons/icon-soundcloud.png'></a>
+      <a href='https://www.youtube.com/channel/UCQGCkDY4KYNJnjCUZknKSwQ' target='_blank'><img class='icon' src='assets/img/icons/icon-youtube.png'></a>
+    </div>
+
+    <article class='right'>
+      <p>Greetings humans. My name is Aurora Synchronicity, but I go by the pen name Sytantris Dyat.</p>
+
+      <p>I am a web developer by trade, and a musician by dream. Educated in programming, web development as well as audio engineering and music production, I recently completed the Advanced Recording Artist program at <a href='http://www.harboursideit.com'>Harbourside Institute of Technology</a> in North Vancouver, BC.</p>
+
+      <p>I am a skilled front-end developer with UX/UI training and a keen eye for design. My education and work experience has left me skilled in tools such as HTML5, CSS3, Javascript and jQuery, with some experience with Angular.js as well. I also have experience working in back-end frameworks such as Ruby on Rails, as well as a variety of programming languages such as C++, Java, and mobile development for iOS with Objective-C.</p>
+
+      <p>Musically, my main focus is my project Distant Whisper (which I produce with my partner <a href='http://www.soundcloud.com/tryptid'>tryptid</a>), an agenre lyrical electronic project that challenges the notion that electronic music with lyrics must by nature be cheesy. I also produce music under the moniker <a href='http://www.soundcloud.com/sytantris'>sytantris</a> and am an active up and coming DJ in the Vancouver psytrance scene <a href='http://www.mixcloud.com/sytantris'>under the same name</a>.</p>
+
+      <p>I welcome you to explore my resume, development portfolio and links to my creative projects. Thank you for your visit!</p>
+    </article>
+  </div>
+  
+</body>
+
+</html>

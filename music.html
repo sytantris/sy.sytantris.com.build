@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+  <head>
+
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+    
+        <!-- Hammer reload -->
+          <script>
+            setInterval(function(){
+              try {
+                if(typeof ws != 'undefined' && ws.readyState == 1){return true;}
+                ws = new WebSocket('ws://'+(location.host || 'localhost').split(':')[0]+':35353')
+                ws.onopen = function(){ws.onclose = function(){document.location.reload()}}
+                window.onbeforeunload = function() { ws = null }
+                ws.onmessage = function(){
+                  var links = document.getElementsByTagName('link');
+                    for (var i = 0; i < links.length;i++) {
+                    var link = links[i];
+                    if (link.rel === 'stylesheet' && !link.href.match(/typekit/)) {
+                      href = link.href.replace(/((&|\?)hammer=)[^&]+/,'');
+                      link.href = href + (href.indexOf('?')>=0?'&':'?') + 'hammer='+(new Date().valueOf());
+                    }
+                  }
+                }
+              }catch(e){}
+            }, 1000)
+          </script>
+        <!-- /Hammer reload -->
+      
+
+    <link rel='stylesheet' href='assets/css/lib/reset.css'>
+<link rel='stylesheet' href='assets/css/style.css'>
+    <script src='assets/js/jquery-2.1.4.min.js'></script>
+<script src='assets/js/app.js'></script>
+<script src='assets/js/contact.js'></script>
+
+    <link href='assets/favicon.ico' rel='shortcut icon'>
+    <link href='assets/apple-touch-icon.png' rel='apple-touch-icon'>
+
+    <title>Sytantris Dyat</title>
+
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+  </head>
+
+  <body>
+
+    <header>
+      <h1>Sytantris Dyat</h1>
+      <div>
+        <h2>web developer in development</h2>
+      </div>
+      <nav>
+  <ul>
+    <li class='current-parent'><a class='current-parent' href='index.html'>home</a></li>
+    <li class='current'><a class='current' href='music.html'>music</a></li>
+    <li><a href='code.html'>code</a></li>
+    <li><a href='portfolio.html'>portfolio</a></li>
+    <li><a href='resume.html'>resume</a></li>
+    <li><a href='contact.html'>contact</a></li>
+  </ul>
+</nav>
+
+    </header>
+
+  <div class='content'>
+    <div class='right'>
+      <h1>music</h1>
+      <img src='assets/img/sy-02.jpg'>
+    </div>
+    <article class='left'>
+      <p>I've been composing songs as long as I can remember, be it recording impromptu lyrics into a tape recorder at age 5, pouring lyrics into my notebook at age 10, staying up late composing with my keyboard at age 14, or writing electronic and lyrical music as an adult. Music is my lifeblood and my passion, and creating it with the intent to share is one of my life's goals that I'm in the process of acheiving.</p>
+      <p>I have been educated in both the Audio Engineering &amp; Music Production and Advandced Recording Artist programs at <a href='http://www.harboursideit.com'>Harbourside IT</a> and continue to take classes part-time in order to refresh and advance my skills. The music I produce falls into two over-arching but not mutually exclusive categories: lyrical/singer-songwriter music, and electronic music. Some examples of what I've created are available on <a href='http://www.soundcloud.com/sytantris'>my Soundcloud</a>.</p>
+      <p>My main musical focus right now is my project Distant Whisper which I produce alongside my partner <a href='http://www.soundcloud.com/tryptid'>tryptid</a>. We are in the throes of creating a 4-track concept EP which will be released in late fall/early winter 2015. Distant Whisper combines my lyrics and melodies with our combined, complementary production skills. It is agenre, electronic, psychedelic and dark, defying description as much as possible.</p>
+      <p>My other musical focus is DJing under the name <a href='http://www.facebook.com/sytantrismusic'>sytantris</a> in the Vancouver psytrance scene. I began mixing seriously in the spring of 2015, played my first party in June and have had many successful gigs ever since. I play mainly full power classy psytrance, twilight, nightpsy and progressive, although I expect to venture into new subgenres as the opportunity arises. I record my mixes whenever possible and post them on <a href='http://www.mixcloud.com/sytantris'>my Mixcloud</a>.</p>
+    </article>
+  </div>
+  
+</body>
+
+</html>

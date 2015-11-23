@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+  <head>
+
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+    
+        <!-- Hammer reload -->
+          <script>
+            setInterval(function(){
+              try {
+                if(typeof ws != 'undefined' && ws.readyState == 1){return true;}
+                ws = new WebSocket('ws://'+(location.host || 'localhost').split(':')[0]+':35353')
+                ws.onopen = function(){ws.onclose = function(){document.location.reload()}}
+                window.onbeforeunload = function() { ws = null }
+                ws.onmessage = function(){
+                  var links = document.getElementsByTagName('link');
+                    for (var i = 0; i < links.length;i++) {
+                    var link = links[i];
+                    if (link.rel === 'stylesheet' && !link.href.match(/typekit/)) {
+                      href = link.href.replace(/((&|\?)hammer=)[^&]+/,'');
+                      link.href = href + (href.indexOf('?')>=0?'&':'?') + 'hammer='+(new Date().valueOf());
+                    }
+                  }
+                }
+              }catch(e){}
+            }, 1000)
+          </script>
+        <!-- /Hammer reload -->
+      
+
+    <link rel='stylesheet' href='assets/css/lib/reset.css'>
+<link rel='stylesheet' href='assets/css/style.css'>
+    <script src='assets/js/jquery-2.1.4.min.js'></script>
+<script src='assets/js/app.js'></script>
+<script src='assets/js/contact.js'></script>
+
+    <link href='assets/favicon.ico' rel='shortcut icon'>
+    <link href='assets/apple-touch-icon.png' rel='apple-touch-icon'>
+
+    <title>Sytantris Dyat</title>
+
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+  </head>
+
+  <body>
+
+    <header>
+      <h1>Sytantris Dyat</h1>
+      <div>
+        <h2>web developer in development</h2>
+      </div>
+      <nav>
+  <ul>
+    <li class='current-parent'><a class='current-parent' href='index.html'>home</a></li>
+    <li><a href='music.html'>music</a></li>
+    <li class='current'><a class='current' href='code.html'>code</a></li>
+    <li><a href='portfolio.html'>portfolio</a></li>
+    <li><a href='resume.html'>resume</a></li>
+    <li><a href='contact.html'>contact</a></li>
+  </ul>
+</nav>
+
+    </header>
+
+  <div class='content'>
+    <div class='left'>
+      <h1>code</h1>
+      <img src='assets/img/sy-03.jpg'>
+    </div>
+    <article class='right'>
+      <p>I've always had a mathematical, problem-solving mind, and my informal forays into the world of programming started early - as a child I remember programming small user interfaces in a language/platform whose name I no longer remember, and as a teenager I became an IRC 'script kitty', writing bots to live in our channels. I learned HTML and made countless websites throughout my pre-teen and teenage years. In my early twenties I decided to take an intro-level Java programming course in college. Programming came naturally to me - I was good at it, the assignments were enjoyably challenging but ultimately easy and fun for me.</p>
+      <p>A few years passed and I always intended to learn more about it, but as it tends to go with life, things got in the way - work, school, travel, relationships, activities. But the bug had bitten me, it was only a matter of time, and one day, dissatisfied my customer service job and dating a programmer, I asked my partner what language he'd recommend learning. He suggested Ruby, and I fell in love. I spent my lunch breaks reading tutorials, my weekends with my head buried in my laptop hacking away at whatever problem I was working on while my roommates watched reality shows.</p>
+      <p>As my skills and passion grew it became apparent to me that I would benefit from some more higher education on the subject, so I enrolled at Langara College in several university-level programming and web development courses. I spent a grueling school year doing basically nothing but programming and that summer was offered my first contract development job developing the MVP for a niche-based social network, using a stack I was completely unfamiliar with - platforms not known for their ease of use, such as Pyramid and Angular.js. Soon after that, I was accepted as the junior developer at a client-driven development company where I integrated the front-end designs, and increasingly began working on the Rails/Refinery backend, for a number of websites. I spent about a year and a half with this company before taking a hiatus in order to return to school to pursue my musical dreams.</p>
+      <p>I am well-versed in front-end technologies such as HTML5, CSS3, SASS &amp; LESS, Javascript and jQuery, since that is where the majority of my work experience lies. However, my skills do not limit me to front-end work - I have experience working in Rails, RefineryCMS and LocomotiveCMS as well. Additionally, I've explored a variety of languages, including Ruby, Java, C++, Objective-C and PHP, which I have varying levels of mastery in. I also have a strong eye for web design and training in usability/user interface design.</p>
+      <p>Some examples of my code can be found on <a href='http://www.github.com/sytantris'>my Github</a>.</p>
+    </article>
+  </div>
+  
+</body>
+
+</html>

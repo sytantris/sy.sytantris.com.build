@@ -1,0 +1,332 @@
+@font-face {
+  font-family: Existence;
+  src: url(../fonts/Existence-Light.otf); }
+@font-face {
+  font-family: Exo;
+  src: url(../fonts/Exo-Regular.otf); }
+/* ion8 dev library
+ * _media.scss
+ * a library of easy media queries and common viewport widths
+ * import using at too of file: 'import media';
+ * by Sy Dyat sy@ion8.net 2014-02-18 - 2014-03-31
+ */
+/***** VARIABLES *****/
+/***** MIXINS *****/
+/* respond to all media up to and including $max width */
+/* respond to media over $min width */
+/* respond to media between ($min + 1px) and $max width */
+/* respond to print media, hide all selectors given as parameters */
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box; }
+
+html {
+  height: 100%;
+  font-size: 10px; }
+
+body {
+  height: 100%;
+  background-image: url(../img/background-main.jpg);
+  background-size: cover;
+  background-position: fixed;
+  font-family: Existence;
+  color: #C0BFFE; }
+  @media screen and (max-width: 768px) {
+    body {
+      background-position: 50%; } }
+
+a {
+  text-decoration: none;
+  color: #BF87D7;
+  transition: 0.3s ease-in-out; }
+  a:hover {
+    color: #e8d4f1;
+    transition: 0.3s ease-in-out; }
+
+header {
+  width: 100%;
+  background-color: #1C1B2C;
+  opacity: 0.8;
+  border-bottom: 2px outset #A1A1A8;
+  box-shadow: 3px 3px 7px #08080c;
+  display: flex;
+  flex-flow: row wrap; }
+  header > * {
+    flex: 1 100%; }
+  header h1 {
+    display: block;
+    width: 100%;
+    padding: 15px 15px 5px;
+    color: #5EC0C6; }
+    @media screen and (max-width: 980px) {
+      header h1 {
+        font-size: 40px; } }
+    @media screen and (min-width: 981px) {
+      header h1 {
+        font-size: 40px;
+        font-size: 4vw; } }
+  header div {
+    min-width: 400px;
+    flex: 1 auto; }
+    header div h2 {
+      font-size: 24px;
+      text-align: right;
+      width: 400px;
+      color: #A1A1A8;
+      margin-bottom: 20px; }
+      @media screen and (max-width: 400px) {
+        header div h2 {
+          padding-right: 20px; } }
+  header nav {
+    flex: 9 auto;
+    text-align: center; }
+    header nav ul {
+      text-align: center;
+      padding: 0; }
+      header nav ul li {
+        display: inline-block;
+        text-align: center;
+        margin: 0 0 20px;
+        padding: 0 20px;
+        border-right: 1px solid #5EC0C6;
+        letter-spacing: 2px; }
+        header nav ul li:last-of-type {
+          border-right: none; }
+        @media screen and (max-width: 480px) {
+          header nav ul li {
+            font-size: 34px; } }
+        @media screen and (min-width: 481px) and (max-width: 640px) {
+          header nav ul li {
+            font-size: 20px;
+            font-size: 4vw; } }
+        @media screen and (min-width: 641px) and (max-width: 980px) {
+          header nav ul li {
+            font-size: 20px;
+            font-size: 2.5vw; } }
+        @media screen and (min-width: 981px) {
+          header nav ul li {
+            font-size: 20px;
+            font-size: 1.7vw; } }
+
+div.content {
+  margin: 40px auto;
+  padding: 20px;
+  width: 80%;
+  overflow: scroll;
+  background-color: rgba(28, 27, 44, 0.8);
+  border: 3px outset #A1A1A8;
+  border-left-width: 2px;
+  border-top-width: 2px;
+  border-radius: 10px;
+  box-shadow: 3px 3px 7px #08080c;
+  font-family: Exo;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 1px; }
+  @media screen and (min-width: 481px) {
+    div.content {
+      max-height: 65vh; } }
+  div.content > div {
+    text-align: center;
+    width: 30%; }
+    div.content > div.left {
+      float: left; }
+    div.content > div.right {
+      float: right; }
+    @media screen and (max-width: 640px) {
+      div.content > div {
+        width: 100%;
+        float: none;
+        margin-bottom: 30px; } }
+    @media screen and (min-width: 641px) and (max-width: 980px) {
+      div.content > div {
+        width: 40%; } }
+    div.content > div h1 {
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+      color: #5EC0C6; }
+    div.content > div img {
+      width: 100%;
+      height: auto;
+      max-width: 400px;
+      border: 1px solid #BF87D7;
+      border-radius: 10px; }
+      div.content > div img#sy-main {
+        margin-bottom: 20px; }
+      div.content > div img.icon {
+        width: 15%;
+        height: auto;
+        border: none;
+        border-radius: 50%;
+        margin-right: 5px; }
+        div.content > div img.icon:hover {
+          background: #5EC0C6; }
+  div.content article {
+    width: 70%;
+    float: left; }
+    @media screen and (max-width: 640px) {
+      div.content article {
+        width: 100%;
+        float: none; } }
+    @media screen and (min-width: 641px) and (max-width: 980px) {
+      div.content article {
+        width: 60%; } }
+    div.content article.left {
+      padding-right: 20px; }
+      div.content article.left h1, div.content article.left p {
+        text-align: right; }
+    div.content article.right {
+      padding-left: 20px; }
+      div.content article.right h1 {
+        text-align: left; }
+    div.content article#portfolio > div {
+      border: 1px solid #BF87D7;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      padding: 10px; }
+      div.content article#portfolio > div:last-of-type {
+        margin-bottom: 0; }
+      div.content article#portfolio > div ul li {
+        font-size: 1.4rem; }
+    div.content article#resume li {
+      list-style-type: disc; }
+    div.content article#resume > div {
+      margin-bottom: 50px;
+      border: 1px solid #BF87D7;
+      border-radius: 10px;
+      padding: 10px; }
+      div.content article#resume > div#pdf {
+        display: none;
+        border: 1px solid #5EC0C6; }
+        div.content article#resume > div#pdf h2 {
+          border-bottom: 0;
+          margin-bottom: 0;
+          padding-bottom: 0; }
+      div.content article#resume > div#objective p {
+        margin-bottom: 0; }
+      div.content article#resume > div#objective ul {
+        color: #BF87D7; }
+      div.content article#resume > div#qualifications ul {
+        font-size: 1.4rem; }
+      div.content article#resume > div#skills {
+        overflow: auto; }
+        div.content article#resume > div#skills p {
+          margin-left: 0;
+          margin-bottom: 0; }
+        @media screen and (min-width: 981px) and (max-width: 1200px) {
+          div.content article#resume > div#skills div.legend {
+            float: left;
+            width: 40%; } }
+        @media screen and (min-width: 1201px) {
+          div.content article#resume > div#skills div.legend {
+            float: left;
+            width: 30%; } }
+        @media screen and (min-width: 981px) and (max-width: 1200px) {
+          div.content article#resume > div#skills ul {
+            float: left;
+            width: 60%; } }
+        @media screen and (min-width: 1201px) {
+          div.content article#resume > div#skills ul {
+            float: left;
+            width: 70%; } }
+        div.content article#resume > div#skills ul li {
+          list-style-type: none;
+          display: inline-block;
+          margin-left: 0;
+          margin-right: 10px;
+          margin-bottom: 10px;
+          border: 1px solid #BF87D7;
+          border-radius: 5px;
+          padding: 5px; }
+          div.content article#resume > div#skills ul li:hover {
+            background-color: #1C1B2C; }
+        div.content article#resume > div#skills span.stars {
+          color: #BF87D7; }
+      div.content article#resume > div#education p, div.content article#resume > div#employment p {
+        margin-bottom: 0; }
+        div.content article#resume > div#education p.title, div.content article#resume > div#employment p.title {
+          font-size: 1.6rem; }
+      div.content article#resume > div#education ul, div.content article#resume > div#employment ul {
+        margin-bottom: 20px;
+        color: #BF87D7; }
+      div.content article#resume > div#employment {
+        margin-bottom: 0; }
+    div.content article#contact #form-messages div {
+      border-radius: 5px;
+      margin-bottom: 20px;
+      padding: 10px;
+      display: none; }
+    div.content article#contact #form-messages #form-success {
+      background-color: #BF87D7;
+      color: #1C1B2C;
+      border: 1px solid #C0BFFE; }
+    div.content article#contact #form-messages #form-error {
+      background-color: #5EC0C6;
+      color: #1C1B2C;
+      border: 1px solid #C0BFFE; }
+    div.content article#contact form > div {
+      margin: 10px 0 0;
+      width: 480px; }
+      div.content article#contact form > div #contact-name, div.content article#contact form > div #contact-email {
+        width: 100%;
+        margin-bottom: 20px;
+        background-color: #C0BFFE;
+        border-radius: 5px 0 5px 0;
+        font-family: inherit;
+        font-weight: bold;
+        font-size: 1.4rem;
+        padding: 5px; }
+        div.content article#contact form > div #contact-name::-webkit-input-placeholder, div.content article#contact form > div #contact-email::-webkit-input-placeholder {
+          color: #1C1B2C; }
+        div.content article#contact form > div #contact-name:-moz-placeholder, div.content article#contact form > div #contact-email:-moz-placeholder {
+          color: #1C1B2C; }
+        div.content article#contact form > div #contact-name::-moz-placeholder, div.content article#contact form > div #contact-email::-moz-placeholder {
+          color: #1C1B2C; }
+        div.content article#contact form > div #contact-name:-ms-input-placeholder, div.content article#contact form > div #contact-email:-ms-input-placeholder {
+          color: #1C1B2C; }
+    div.content article#contact form textarea {
+      display: block;
+      width: 480px;
+      margin: 0 0 20px;
+      background-color: #C0BFFE;
+      border-radius: 5px 0 5px 0;
+      font-family: inherit;
+      font-weight: bold;
+      font-size: 1.4rem;
+      padding: 5px; }
+      div.content article#contact form textarea::-webkit-input-placeholder {
+        color: #1C1B2C; }
+      div.content article#contact form textarea:-moz-placeholder {
+        color: #1C1B2C; }
+      div.content article#contact form textarea::-moz-placeholder {
+        color: #1C1B2C; }
+      div.content article#contact form textarea:-ms-input-placeholder {
+        color: #1C1B2C; }
+    div.content article#contact form > div div {
+      display: inline-block;
+      float: left; }
+    div.content article#contact form > div a#contact-submit {
+      float: right;
+      font-size: 2rem;
+      vertical-align: top;
+      border: 1px solid #BF87D7;
+      border-radius: 5px;
+      padding: 5px; }
+      div.content article#contact form > div a#contact-submit:hover {
+        background-color: rgba(28, 27, 44, 0.8); }
+    div.content article#contact form > div br {
+      clear: both; }
+    div.content article h2 {
+      font-size: 1.8rem;
+      margin-bottom: 5px;
+      border-bottom: 1px solid #BF87D7;
+      text-align: center;
+      padding-bottom: 10px;
+      margin-bottom: 10px; }
+    div.content article p {
+      margin-bottom: 20px;
+      font-size: 1.4rem;
+      line-height: 1.5; }
+    div.content article ul li {
+      margin-left: 20px;
+      line-height: 1.5; }
