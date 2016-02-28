@@ -43,6 +43,15 @@ a {
     color: #e8d4f1;
     transition: 0.3s ease-in-out; }
 
+#imagelightbox {
+  position: fixed;
+  z-index: 9999;
+  background-color: #C0BFFE;
+  border: 1px solid #C0BFFE;
+  border-radius: 10px;
+  -ms-touch-action: none;
+  touch-action: none; }
+
 header {
   width: 100%;
   background-color: #1C1B2C;
@@ -131,8 +140,14 @@ div.content {
     width: 30%; }
     div.content > div.left {
       float: left; }
+      @media screen and (max-width: 600px) {
+        div.content > div.left {
+          float: none; } }
     div.content > div.right {
       float: right; }
+      @media screen and (max-width: 600px) {
+        div.content > div.right {
+          float: none; } }
     @media screen and (max-width: 640px) {
       div.content > div {
         width: 100%;
@@ -175,10 +190,16 @@ div.content {
       padding-right: 20px; }
       div.content article.left h1, div.content article.left p {
         text-align: right; }
+      @media screen and (max-width: 640px) {
+        div.content article.left {
+          padding-right: 0; } }
     div.content article.right {
       padding-left: 20px; }
       div.content article.right h1 {
         text-align: left; }
+      @media screen and (max-width: 640px) {
+        div.content article.right {
+          padding-left: 0; } }
     div.content article#portfolio > div {
       border: 1px solid #BF87D7;
       border-radius: 10px;
@@ -187,7 +208,8 @@ div.content {
       div.content article#portfolio > div:last-of-type {
         margin-bottom: 0; }
       div.content article#portfolio > div ul li {
-        font-size: 1.4rem; }
+        font-size: 1.4rem;
+        list-style-type: disc; }
     div.content article#resume li {
       list-style-type: disc; }
     div.content article#resume > div {
@@ -251,6 +273,8 @@ div.content {
         color: #BF87D7; }
       div.content article#resume > div#employment {
         margin-bottom: 0; }
+    div.content article#contact > p {
+      text-align: left; }
     div.content article#contact #form-messages div {
       border-radius: 5px;
       margin-bottom: 20px;
@@ -266,7 +290,8 @@ div.content {
       border: 1px solid #C0BFFE; }
     div.content article#contact form > div {
       margin: 10px 0 0;
-      width: 480px; }
+      width: 480px;
+      max-width: 480px; }
       div.content article#contact form > div #contact-name, div.content article#contact form > div #contact-email {
         width: 100%;
         margin-bottom: 20px;
@@ -284,6 +309,12 @@ div.content {
           color: #1C1B2C; }
         div.content article#contact form > div #contact-name:-ms-input-placeholder, div.content article#contact form > div #contact-email:-ms-input-placeholder {
           color: #1C1B2C; }
+      @media screen and (max-width: 640px) {
+        div.content article#contact form > div {
+          width: 100%; } }
+      @media screen and (min-width: 641px) and (max-width: 980px) {
+        div.content article#contact form > div {
+          width: 100%; } }
     div.content article#contact form textarea {
       display: block;
       width: 480px;
@@ -302,9 +333,20 @@ div.content {
         color: #1C1B2C; }
       div.content article#contact form textarea:-ms-input-placeholder {
         color: #1C1B2C; }
+      @media screen and (max-width: 640px) {
+        div.content article#contact form textarea {
+          width: 100%; } }
+      @media screen and (min-width: 641px) and (max-width: 980px) {
+        div.content article#contact form textarea {
+          width: 100%; } }
     div.content article#contact form > div div {
       display: inline-block;
       float: left; }
+      @media screen and (max-width: 980px) {
+        div.content article#contact form > div div.g-recaptcha {
+          width: 100%;
+          overflow-y: scroll;
+          margin-bottom: 20px; } }
     div.content article#contact form > div a#contact-submit {
       float: right;
       font-size: 2rem;

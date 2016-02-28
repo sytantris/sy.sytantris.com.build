@@ -42,6 +42,7 @@
     <script src='assets/js/jquery-2.1.4.min.js'></script>
 <script src='assets/js/app.js'></script>
 <script src='assets/js/contact.js'></script>
+<script src='assets/js/imagelightbox.js'></script>
 
     <link href='assets/favicon.png' rel='shortcut icon'>
     <link href='assets/apple-touch-icon.png' rel='apple-touch-icon'>
@@ -49,6 +50,11 @@
     <title>Sytantris Dyat</title>
 
     <script src='https://www.google.com/recaptcha/api.js'></script>
+    <script>
+      $(function() {
+          $('a.imagelightbox').imageLightbox();
+      });
+    </script>
   </head>
 
   <body>
@@ -62,6 +68,7 @@
   <ul>
     <li class='current-parent'><a class='current-parent' href='index.html'>home</a></li>
     <li><a href='music.html'>music</a></li>
+    <li><a href='flow.html'>flow</a></li>
     <li><a href='code.html'>code</a></li>
     <li><a href='portfolio.html'>portfolio</a></li>
     <li class='current'><a class='current' href='resume.html'>resume</a></li>
@@ -86,7 +93,7 @@
 
       <div id='objective'>
         <h2>Objective</h2>
-        <p>Employment in a junior to intermediate, front or back end web development position that allows me to:</p>
+        <p>Employment in an intermediate-level front-end or full stack web development position that allows me to:</p>
         <ul>
           <li>utilize and develop my current skillset</li>
           <li>learn and explore technologies I'm less familiar with</li>
@@ -100,7 +107,7 @@
         <h2>Qualifications</h2>
         <ul>
           <li>Several years of programming and web development experience</li>
-          <li>Proficient in front and back end web platforms</li>
+          <li>Proficient in front- and back-end web platforms</li>
           <li>Writes clean, consistent, well-formatted and refactored code</li>
           <li>Mathematical mind, strong problem solving capacity and programming acumen</li>
           <li>Excellent communication skills, both written and oral</li>
@@ -149,7 +156,7 @@
         <h2>Education</h2>
 
         <p class='title'>Advanced Recording Artist Program</p>
-        <p>Harbourside Institute of Technology • 2015 July - present</p>
+        <p>Harbourside Institute of Technology • 2015 July - 2015 October</p>
         <ul>
           <li>Co-producing a professional 4-track concept electronic/lyrical EP</li>
           <li>Composing, programming (using Ableton Live and Logic Pro), studio recording, vocal compositing and tuning, mixing tracks with the guidance and mentorship of instructors</li>
@@ -193,7 +200,7 @@
       <div id='employment'>
         <h2>Employment Highlights</h2>
         <p class='title'>Web Developer (Remote)</p>
-        <p> ion8 (North Bay, ON) • 2013 October - 2015 July</p>
+        <p> ion8 (North Bay, ON) • 2013 October - present</p>
         <ul>
           <li>Client-oriented front- and back-end development for a web agency</li>
           <li>Front-end development using HTML, CSS/SASS, Javascript/jQuery, Bootstrap, Foundation</li>
@@ -212,8 +219,11 @@
         <p class='title'>Circulation Assistant</p>
         <p>Vancouver Public Library (Vancouver, BC) • 2008 November - 2012 June</p>
         <ul>
-          <li>Provided excellent customer service and performed circulatory duties:</li>
-          <li>Performing checkouts, processing returns, shelving, registering new patrons, day-to-day problem solving with regards to patron records, clerical work</li>
+          <li>Provided excellent customer service and performed circulatory duties:
+            <ul>
+              <li>Assisting customers with checkouts, processing returns, shelving, registering new patrons, day-to-day problem solving with regards to patron records, clerical work</li>
+            </ul>
+          </li>
         </ul>
       </div>
     </article>

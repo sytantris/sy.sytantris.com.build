@@ -42,6 +42,7 @@
     <script src='assets/js/jquery-2.1.4.min.js'></script>
 <script src='assets/js/app.js'></script>
 <script src='assets/js/contact.js'></script>
+<script src='assets/js/imagelightbox.js'></script>
 
     <link href='assets/favicon.png' rel='shortcut icon'>
     <link href='assets/apple-touch-icon.png' rel='apple-touch-icon'>
@@ -49,6 +50,11 @@
     <title>Sytantris Dyat</title>
 
     <script src='https://www.google.com/recaptcha/api.js'></script>
+    <script>
+      $(function() {
+          $('a.imagelightbox').imageLightbox();
+      });
+    </script>
   </head>
 
   <body>
@@ -62,6 +68,7 @@
   <ul>
     <li class='current-parent'><a class='current-parent' href='index.html'>home</a></li>
     <li><a href='music.html'>music</a></li>
+    <li><a href='flow.html'>flow</a></li>
     <li><a href='code.html'>code</a></li>
     <li class='current'><a class='current' href='portfolio.html'>portfolio</a></li>
     <li><a href='resume.html'>resume</a></li>
@@ -101,10 +108,21 @@
       <div>
         <h2>Graphic design</h2>
         <ul>
-          <li>Ghost Stories 2015 event flyer [ <a href='assets/img/design/ghost-flyer-01.png'>front</a> | <a href='assets/img/design/ghost-flyer-02.png'>back</a> | <a href='assets/img/design/ghost-ticket.png'>ticket</a> ]</li>
-          <li>Just What The Doctor Ordered 2004 event flyer [ <a href='assets/img/design/doctor-flyer-01.png'>front</a> | <a href='assets/img/design/doctor-flyer-02.png'>back</a> ]</li>
-          <li><a href='assets/img/design/tamaribeats-cover.jpg'>tamaribeats cover photo</li>
-          <li><a href='assets/img/design/skc-logo.png'>Spectral Kitty Collective prospective logo</a></li>
+          <li>Ghost Stories 2015 event flyer
+            <ul>
+              <li><a class='imagelightbox' href='assets/img/design/ghost-flyer-01.png'>front</a></li>
+              <li><a class='imagelightbox' href='assets/img/design/ghost-flyer-02.png'>back</a></li>
+              <li><a class='imagelightbox' href='assets/img/design/ghost-ticket.png'>ticket</a></li>
+            </ul>
+          </li>
+          <li>Just What The Doctor Ordered 2004 event flyer
+            <ul>
+              <li><a class='imagelightbox' href='assets/img/design/doctor-flyer-01.png'>front</a></li>
+              <li><a class='imagelightbox' href='assets/img/design/doctor-flyer-02.png'>back</a></li>
+            </ul>
+          </li>
+          <li><a class='imagelightbox' href='assets/img/design/tamaribeats-cover.jpg'>tamaribeats cover photo</li>
+          <li><a class='imagelightbox' href='assets/img/design/skc-logo.png'>Spectral Kitty Collective prospective logo</a></li>
         </ul>
       </div>
     </article>

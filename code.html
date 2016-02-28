@@ -42,6 +42,7 @@
     <script src='assets/js/jquery-2.1.4.min.js'></script>
 <script src='assets/js/app.js'></script>
 <script src='assets/js/contact.js'></script>
+<script src='assets/js/imagelightbox.js'></script>
 
     <link href='assets/favicon.png' rel='shortcut icon'>
     <link href='assets/apple-touch-icon.png' rel='apple-touch-icon'>
@@ -49,6 +50,11 @@
     <title>Sytantris Dyat</title>
 
     <script src='https://www.google.com/recaptcha/api.js'></script>
+    <script>
+      $(function() {
+          $('a.imagelightbox').imageLightbox();
+      });
+    </script>
   </head>
 
   <body>
@@ -62,6 +68,7 @@
   <ul>
     <li class='current-parent'><a class='current-parent' href='index.html'>home</a></li>
     <li><a href='music.html'>music</a></li>
+    <li><a href='flow.html'>flow</a></li>
     <li class='current'><a class='current' href='code.html'>code</a></li>
     <li><a href='portfolio.html'>portfolio</a></li>
     <li><a href='resume.html'>resume</a></li>
