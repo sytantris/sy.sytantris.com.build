@@ -61,7 +61,8 @@ header {
   display: flex;
   flex-flow: row wrap; }
   header > * {
-    flex: 1 100%; }
+    flex: 1 100%;
+    border: 1px solid blue; }
   header h1 {
     display: block;
     width: 100%;
@@ -75,7 +76,6 @@ header {
         font-size: 40px;
         font-size: 4vw; } }
   header div {
-    min-width: 400px;
     flex: 1 auto; }
     header div h2 {
       font-size: 24px;
