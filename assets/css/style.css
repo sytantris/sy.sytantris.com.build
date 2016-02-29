@@ -80,10 +80,10 @@ header {
     header div h2 {
       font-size: 24px;
       text-align: right;
-      width: 400px;
+      width: 100%;
       color: #A1A1A8;
       margin-bottom: 20px; }
-      @media screen and (max-width: 400px) {
+      @media screen and (max-width: 480px) {
         header div h2 {
           padding-right: 40px; } }
   header nav {
@@ -103,7 +103,8 @@ header {
           border-right: none; }
         @media screen and (max-width: 480px) {
           header nav ul li {
-            font-size: 24px; } }
+            font-size: 24px;
+            padding: 0 10px; } }
         @media screen and (min-width: 481px) and (max-width: 640px) {
           header nav ul li {
             font-size: 20px;
