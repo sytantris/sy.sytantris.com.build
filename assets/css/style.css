@@ -61,8 +61,7 @@ header {
   display: flex;
   flex-flow: row wrap; }
   header > * {
-    flex: 1 100%;
-    border: 1px solid blue; }
+    flex: 1 100%; }
   header h1 {
     display: block;
     width: 100%;
@@ -85,7 +84,7 @@ header {
       margin-bottom: 20px; }
       @media screen and (max-width: 480px) {
         header div h2 {
-          padding-right: 40px; } }
+          padding-right: 10px; } }
   header nav {
     flex: 9 auto;
     text-align: center; }
